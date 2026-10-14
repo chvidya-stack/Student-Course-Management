@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student and Course Management</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 25px;
+    background: #f4f6f9;
+    color: #222;
+}
+h1, h2 { color: #203864; }
+section {
+    background: white;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+input, select {
+    padding: 9px;
+    margin: 5px;
+}
+button {
+    padding: 9px 13px;
+    margin: 4px;
+    background: #203864;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.delete { background: #a52a2a; }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0 25px;
+    background: white;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 9px;
+    text-align: left;
+}
+th { background: #dce6f1; }
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+.message { color: #444; }
+</style>
+</head>
+
+<body>
+<h1>Student and Course Management System</h1>
+<p>Manage students, courses, joins and aggregate operations.</p>
+
+<section>
+<h2>Add Student</h2>
+<form id="studentForm">
+    <input id="studentName" placeholder="Student Name" required>
+
+    <input id="studentAge" type="number" placeholder="Age"
+           min="10" max="99" step="1" required>
+
+    <select id="studentCourse" required>
+        <option value="">Select Course</option>
+    </select>
+
+    <input id="studentCGPA" type="number" placeholder="CGPA"
+           min="0" max="10" step="0.01" required>
+
+    <input id="studentMarks" type="number" placeholder="Marks (0–100)"
+           min="0" max="100" step="1" required>
+
+    <button type="submit">Add Student</button>
+</form>
+<p id="studentMessage" class="message"></p>
+</section>
+
+<section>
+<h2>Students Table</h2>
+<div id="students" class="table-container"></div>
+</section>
+
+<section>
+<h2>Create Course</h2>
+<form id="courseForm">
+    <input id="courseID" placeholder="Course ID"
+           maxlength="6" pattern="[A-Za-z0-9]{1,6}"
+           title="Enter 1–6 letters or numbers" required>
+
+    <input id="courseName" placeholder="Course Name"
+           pattern="[A-Za-z]+( [A-Za-z]+)*"
+           title="Use letters and spaces only" required>
+
+    <input id="courseCredits" type="number" placeholder="Credits (1–9)"
+           min="1" max="9" step="1" required>
+
+    <button type="submit">Add Course</button>
+</form>
+<p id="courseMessage" class="message"></p>
+</section>
+
+<section>
+<h2>Courses Table</h2>
+<div id="courses" class="table-container"></div>
+</section>
+
+<section>
+<h2>1. Inner Join</h2>
+<div id="inner" class="table-container"></div>
+</section>
+
+<section>
+<h2>2. Left Outer Join</h2>
+<div id="left" class="table-container"></div>
+</section>
+
+<section>
+<h2>3. Right Outer Join</h2>
+<div id="right" class="table-container"></div>
+</section>
+
+<section>
+<h2>4. Full Outer Join</h2>
+<div id="full" class="table-container"></div>
+</section>
+
+<section>
+<h2>5. Cross Join</h2>
+<div id="cross" class="table-container"></div>
+</section>
+
+<section>
+<h2>6. Self Join</h2>
+<div id="self" class="table-container"></div>
+</section>
+
+<section>
+<h2>7. Natural Join Equivalent</h2>
+<div id="natural" class="table-container"></div>
+</section>
+
+<section>
+<h2>Aggregate Operations</h2>
+<div id="aggregates" class="table-container"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
